@@ -12,14 +12,14 @@ class Solution:
         Returns:
             list[int] | None: _description_
         """
-        sort_list: dict[str, list[int] | None] = {
+        sort_list: dict[str, list[int]] = {
             'Asc': quick_sort_asc(lst),
             'Des': quick_sort_dsc(lst),
             'None': lst
         }
 
         return sort_list.get(s)
-    
+
 
 def quick_sort_asc(lst: list[int]) -> list[int]:
     """_summary_

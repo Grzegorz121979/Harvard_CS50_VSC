@@ -31,4 +31,8 @@ def test_six() -> None:
 def test_seven() -> None:
     """test function"""
     assert solution.asc_des_none([9, 7, 43, 11, 16, 111, 19], "Asc") == [7, 9, 11, 16, 19, 43, 111]
+
+def test_eight():
+    """test function"""
+    assert solution.asc_des_none([2, 6, 1, 6, 3], "") is None
   
