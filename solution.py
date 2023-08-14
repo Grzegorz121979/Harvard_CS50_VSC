@@ -12,7 +12,7 @@ class Solution:
         Returns:
             list[int] | None: _description_
         """
-        sort_list: dict[str, list[int]] = {
+        sort_list: dict[str, list[int] | None] = {
             'Asc': quick_sort_asc(lst),
             'Des': quick_sort_dsc(lst),
             'None': lst
@@ -32,7 +32,7 @@ def quick_sort_asc(lst: list[int]) -> list[int]:
     """
     if len(lst) < 2:
         return lst
-    pivot: list[int] = lst[0]
+    pivot: int = lst[0]
     less: list[int] = [i for i in lst[1:] if i <= pivot]
     greater: list[int] = [i for i in lst[1:] if i > pivot]
 
@@ -50,7 +50,7 @@ def quick_sort_dsc(lst: list[int]) -> list[int]:
     """
     if len(lst) < 2:
         return lst
-    pivot: list[int] = lst[0]
+    pivot: int = lst[0]
     less: list[int] = [i for i in lst[1:] if i <= pivot]
     greater: list[int] = [i for i in lst[1:] if i > pivot]
 
