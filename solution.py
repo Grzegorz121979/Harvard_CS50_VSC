@@ -2,57 +2,19 @@ class Solution:
     """
     Class Solution contain a function with solution of challenges
     """
-    def asc_des_none(self, lst: list[int], s: str) -> list[int] | None:
-        """_summary_
-
+    def factorial(self, num: int) -> int:
+        """
+        function that takes an integer and returns the factorial of that integer
+        
         Args:
-            lst (list[int]): _description_
-            s (str): _description_
+            num (int): 
 
         Returns:
-            list[int] | None: _description_
+            int: 
         """
-        sort_list: dict[str, list[int]] = {
-            'Asc': quick_sort_asc(lst),
-            'Des': quick_sort_dsc(lst),
-            'None': lst
-        }
-
-        return sort_list.get(s)
-
-
-def quick_sort_asc(lst: list[int]) -> list[int]:
-    """_summary_
-
-    Args:
-        lst (list[int]): _description_
-
-    Returns:
-        list[int]: _description_
-    """
-    if len(lst) < 2:
-        return lst
-    pivot: int = lst[0]
-    less: list[int] = [i for i in lst[1:] if i <= pivot]
-    greater: list[int] = [i for i in lst[1:] if i > pivot]
-
-    return quick_sort_asc(less) + [pivot] + quick_sort_asc(greater)
-
-
-def quick_sort_dsc(lst: list[int]) -> list[int]:
-    """_summary_
-
-    Args:
-        lst (list[int]): _description_
-
-    Returns:
-        list[int]: _description_
-    """
-    if len(lst) < 2:
-        return lst
-    pivot: int = lst[0]
-    less: list[int] = [i for i in lst[1:] if i <= pivot]
-    greater: list[int] = [i for i in lst[1:] if i > pivot]
-
-    return quick_sort_dsc(greater) + [pivot] + quick_sort_dsc(less)
-    
+        # num = 5
+        # 5 * 4 * 3 * 2 * 1 = 120
+        if num == 1:
+            return num
+        return num * self.factorial(num - 1)
+            
