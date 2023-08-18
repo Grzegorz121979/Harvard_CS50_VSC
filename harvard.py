@@ -3,5 +3,11 @@ Harvard_CS50_VSC
 """
 from solution import Solution
 
-solution = Solution()
-print(solution.factorial(5))
+def main():
+    """main function"""
+    solution = Solution()
+    print(solution.binary(5))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,20 +1,21 @@
+from math import floor as fl
+
+
 class Solution:
     """
     Class Solution contain a function with solution of challenges
     """
-    def factorial(self, num: int) -> int:
+    def binary(self, decimal: int) -> str:
         """
-        function that takes an integer and returns the factorial of that integer
-        
+        function that returns a base-2 (binary) representation of a base-10 (decimal)
+
         Args:
-            num (int): 
+            decimal (int): decimal number
 
         Returns:
-            int: 
+            str: binary representation
         """
-        # num = 5
-        # 5 * 4 * 3 * 2 * 1 = 120
-        if num == 1:
-            return num
-        return num * self.factorial(num - 1)
+        if decimal < 1:
+            return ''
+        return self.binary(fl(decimal / 2)) + str(decimal % 2)
             
