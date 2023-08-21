@@ -20,4 +20,22 @@ class Solution:
         if decimal < 2:
             return '1'
         return self.binary(fl(decimal / 2)) + str(decimal % 2)
-            
+
+
+    def count_ones(self, num: int) -> int:
+        """
+        function count the amount of ones in the binary representation of an integer
+
+        Args:
+            num (int): 
+
+        Returns:
+            int: 
+        """
+        binary_str = self.binary(num)
+        count = 0
+        for _, number in enumerate(binary_str):
+            if number == '1':
+                count += 1
+        return count
+         
