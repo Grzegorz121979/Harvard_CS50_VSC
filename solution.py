@@ -15,7 +15,9 @@ class Solution:
         Returns:
             str: binary representation
         """
-        if decimal < 1:
-            return ''
+        if decimal == 0:
+            return '0'
+        if decimal < 2:
+            return '1'
         return self.binary(fl(decimal / 2)) + str(decimal % 2)
             
