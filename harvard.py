@@ -6,7 +6,7 @@ from solution import Solution
 def main():
     """main function"""
     solution = Solution()
-    print(solution.count_ones(100))
+    print(solution.correct_signs('13 < 44 > 33 > 1'))
 
 
 if __name__ == '__main__':

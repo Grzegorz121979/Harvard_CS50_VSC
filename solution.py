@@ -1,41 +1,27 @@
-from math import floor as fl
-
-
 class Solution:
     """
     Class Solution contain a function with solution of challenges
     """
-    def binary(self, decimal: int) -> str:
-        """
-        function that returns a base-2 (binary) representation of a base-10 (decimal)
+    def correct_signs(self, txt: str) -> bool:
+        """_summary_
 
         Args:
-            decimal (int): decimal number
+            txt (str): _description_
 
         Returns:
-            str: binary representation
+            bool: _description_
         """
-        if decimal == 0:
-            return '0'
-        if decimal < 2:
-            return '1'
-        return self.binary(fl(decimal / 2)) + str(decimal % 2)
+        lst = txt.split(' ')
 
-
-    def count_ones(self, num: int) -> int:
-        """
-        function count the amount of ones in the binary representation of an integer
-
-        Args:
-            num (int): 
-
-        Returns:
-            int: 
-        """
-        binary_str = self.binary(num)
-        count = 0
-        for _, number in enumerate(binary_str):
-            if number == '1':
-                count += 1
-        return count
-         
+        for i in range(len(lst) - 1):
+            if lst[i + 1] == '<':
+                if int(lst[i]) < int(lst[i + 2]):
+                    pass
+                else:
+                    return False
+            if lst[i + 1] == '>':
+                if int(lst[i]) > int(lst[i + 2]):
+                    pass
+                else:
+                    return False
+        return True

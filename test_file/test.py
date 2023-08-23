@@ -4,34 +4,29 @@ from solution import Solution
 
 solution = Solution()
 
-def test_one() -> None:
-    """test function"""
-    assert solution.binary(100) == '1100100'
+def test_one():
+    assert solution.correct_signs("3 < 7 < 11") is True
 
-def test_two() -> None:
-    """test function"""
-    assert solution.binary(1) == '1'
 
-def test_three() -> None:
-    """test function"""
-    assert solution.binary(0) == '0'
+def test_two():
+    assert solution.correct_signs("13 > 44 > 33 > 1") is False
 
-def test_four() -> None:
-    """test function"""
-    assert solution.binary(69) == '1000101'
 
-def test_five() -> None:
-    """test function"""
-    assert solution.binary(1023) == '1111111111'
+def test_three():
+    assert solution.correct_signs("1 < 2 < 6 < 9 > 3") is True
 
-def test_six() -> None:
-    """test function"""
-    assert solution.binary(511) == '111111111'
 
-def test_seven() -> None:
-    """test function"""
-    assert solution.binary(666) == '1010011010'
+def test_four():
+    assert solution.correct_signs("4 > 3 > 2 > 1") is True
 
-def test_eight() -> None:
-    """test function"""
-    assert solution.binary(123) == '1111011'
+
+def test_five():
+    assert solution.correct_signs("5 < 7 > 1") is True
+
+
+def test_six():
+    assert solution.correct_signs("5 > 7 > 1") is False
+
+
+def test_seven():
+    assert solution.correct_signs("9 < 9") is False
